@@ -19,7 +19,7 @@ function Signin() {
         localStorage.setItem("signname", uname);
       }, 1000);
     } else {
-      alert("check");
+      alert("once again recheck");
     }
   };
   return (
@@ -46,7 +46,7 @@ function Signin() {
         <div className="container">
           <div className="sign-view text-center">
             <div className="sign-intro">
-              <h4>Sign-up</h4>
+              <h4>Sign-in</h4>
             </div>
 
             <div className="name">

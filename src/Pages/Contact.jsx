@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Envelope, GeoAlt, PhoneVibrate,ArrowReturnLeft } from "react-bootstrap-icons";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 function Contact() {
   const[fname,setfname]=useState('')
@@ -8,16 +8,24 @@ function Contact() {
   const[company,setcompany]=useState('')
   const[phone,setphone]=useState('')
   const[message,setmessage]=useState('')
+  const  nav= useNavigate()
 
   const submit=()=>{
       if(!fname && !email){
-        alert('pls fill the contact page correctly')
+        alert('pls fill name and email')
       }
-      else if(!company && !phone && !message){
-        alert('pls fill the contact page correctly')
+      else if(!company && !phone){
+        alert('pls fill company name and phone number')
+      }
+      else if(!message){
+        alert('pls write your message')
       }
       else(
-        alert('submited')
+      setTimeout(() => {
+          alert('messege sended')
+          nav('/')
+      }, 1000)
+        
       )
   }
 
